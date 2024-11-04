@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display JSON Data</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            background-color: #ffe5b4;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        $(document).ready(function () {
+            // Embedded JSON data
+            const data = [
+                {
+                    "title": "The Great Gatsby",
+                    "author": "F. Scott Fitzgerald",
+                    "publicationYear": 1925,
+                    "genres": ["Fiction", "Classics"]
+                },
+                {
+                    "title": "To Kill a Mockingbird",
+                    "author": "Harper Lee",
+                    "publicationYear": 1960,
+                    "genres": ["Fiction", "Coming-of-Age"]
+                }
+            ];
+
+            // (a) Display the title of the first book
+            console.log("Title of the first book:", data[0].title);
+
+            // (b) Display the author of the second book
+            console.log("Author of the second book:", data[1].author);
+
+            // (c) Display the genres of all books
+            data.forEach(function (book, index) {
+                console.log("Genres of Book " + (index + 1) + ":", book.genres.join(", "));
+            });
+        });
+    </script>
+</body>
+</html>
